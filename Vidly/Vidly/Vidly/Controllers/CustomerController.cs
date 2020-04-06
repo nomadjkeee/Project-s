@@ -26,22 +26,22 @@ namespace Vidly.Controllers
             cList.Customers.Add(c2);
             cList.Customers.Add(c3);
 
-            var u1 = new SomeFilmViewModel();
-            u1.Id = 1;
-            u1.Movies = m1;
-            u1.Customers.Add(c1);
-            u1.Customers.Add(c2);
+            //var u1 = new SomeFilmViewModel();
+            //u1.Id = 1;
+            //u1.Movies = m1;
+            //u1.Customers.Add(c1);
+            //u1.Customers.Add(c2);
 
-            var u2 = new SomeFilmViewModel();
-            u2.Id = 2;
-            u2.Movies = m2;
-            u2.Customers.Add(c2);
+            //var u2 = new SomeFilmViewModel();
+            //u2.Id = 2;
+            //u2.Movies = m2;
+            //u2.Customers.Add(c2);
 
-            var u3 = new SomeFilmViewModel();
-            u3.Id = 3;
-            u3.Movies = m3;
-            u3.Customers.Add(c2);
-            u3.Customers.Add(c3);
+            //var u3 = new SomeFilmViewModel();
+            //u3.Id = 3;
+            //u3.Movies = m3;
+            //u3.Customers.Add(c2);
+            //u3.Customers.Add(c3);
 
             return View(cList);
         }
