@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,7 +134,30 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004080734573_FirstInit.cs" />
+    <Compile Include="Migrations\202004080734573_FirstInit.Designer.cs">
+      <DependentUpon>202004080734573_FirstInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004080747014_InitCustomerTable.cs" />
+    <Compile Include="Migrations\202004080747014_InitCustomerTable.Designer.cs">
+      <DependentUpon>202004080747014_InitCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004080749270_AddMemberShipTable.cs" />
+    <Compile Include="Migrations\202004080749270_AddMemberShipTable.Designer.cs">
+      <DependentUpon>202004080749270_AddMemberShipTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004080754122_AddMemberShipKey.cs" />
+    <Compile Include="Migrations\202004080754122_AddMemberShipKey.Designer.cs">
+      <DependentUpon>202004080754122_AddMemberShipKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004080755383_InitMemberShipTable.cs" />
+    <Compile Include="Migrations\202004080755383_InitMemberShipTable.Designer.cs">
+      <DependentUpon>202004080755383_InitMemberShipTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\MemberShip.cs" />
     <Compile Include="Models\Movies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\SomeFilmViewModel.cs" />
@@ -187,6 +218,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004080734573_FirstInit.resx">
+      <DependentUpon>202004080734573_FirstInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080747014_InitCustomerTable.resx">
+      <DependentUpon>202004080747014_InitCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080749270_AddMemberShipTable.resx">
+      <DependentUpon>202004080749270_AddMemberShipTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080754122_AddMemberShipKey.resx">
+      <DependentUpon>202004080754122_AddMemberShipKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080755383_InitMemberShipTable.resx">
+      <DependentUpon>202004080755383_InitMemberShipTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

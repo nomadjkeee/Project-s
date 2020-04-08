@@ -84,3 +84,14 @@ E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.dll
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.pdb
+E:\GitProject\Vidly\Vidly\Vidly\bin\EntityFramework.dll
+E:\GitProject\Vidly\Vidly\Vidly\bin\EntityFramework.SqlServer.dll
+E:\GitProject\Vidly\Vidly\Vidly\bin\EntityFramework.xml
+E:\GitProject\Vidly\Vidly\Vidly\bin\EntityFramework.SqlServer.xml
+E:\GitProject\Vidly\Vidly\Vidly\bin\ru\EntityFramework.resources.dll
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.FirstInit.resources
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitCustomerTable.resources
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMemberShipTable.resources
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMemberShipKey.resources
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitMemberShipTable.resources
