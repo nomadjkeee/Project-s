@@ -12,6 +12,7 @@
         // 
         // Если требуется выбрать другую базу данных или поставщик базы данных, измените строку подключения "ApplicationDbContext" 
         // в файле конфигурации приложения.
+
         public ApplicationDbContext()
             : base("name=ApplicationDbContext")
         {
@@ -24,12 +25,15 @@
         public DbSet<Movies> Movies { get; set; }
         public DbSet<MemberShip> MemberShips { get; set; } 
         public DbSet<Genre> Genres { get; set; }
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        
     }
-   
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+   public class MyContextInitialize:DropCreateDatabaseAlways<ApplicationDbContext>
+    {
+        protected override void Seed(ApplicationDbContext context)
+        {
+
+            base.Seed(context);
+        }
+    }
+
 }

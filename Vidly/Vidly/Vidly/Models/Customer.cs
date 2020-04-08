@@ -12,13 +12,14 @@ namespace Vidly.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        
         public DateTime Birthhday { get; set; }
-
         [MaxLength(255)]
         public string Email { get; set; }
         [Required]
         public int? MemberShipId { get; set; }
         public MemberShip MemberShip { get; set; }
+        [Required]
+        public int? GenreId { get; set; }
+        public Genre Genre { get; set; }
     }
 }
