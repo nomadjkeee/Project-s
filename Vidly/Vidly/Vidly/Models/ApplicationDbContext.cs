@@ -22,6 +22,8 @@
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Movies> Movies { get; set; }
+        public DbSet<MemberShip> MemberShips { get; set; } 
+        public DbSet<Genre> Genres { get; set; }
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
     }
    

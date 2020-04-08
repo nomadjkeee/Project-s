@@ -95,3 +95,4 @@ E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitCustomerTable.res
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMemberShipTable.resources
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMemberShipKey.resources
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitMemberShipTable.resources
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreTable.resources

@@ -13,9 +13,9 @@ namespace Vidly.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            Movies m1 = new Movies { Id = 1, Name = "Shrek", Type = "Comedy", Year = 2001 };
-            Movies m2 = new Movies { Id = 2, Name = "Bleyd", Type = "Action", Year = 2004 };
-            Movies m3 = new Movies { Id = 3, Name = "Bleyd 2", Type = "Action", Year = 2005 };
+            Movies m1 = new Movies { Id = 1, Name = "Shrek", Year = 2001 };
+            Movies m2 = new Movies { Id = 2, Name = "Bleyd",  Year = 2004 };
+            Movies m3 = new Movies { Id = 3, Name = "Bleyd 2", Year = 2005 };
 
             Customer c1 = new Customer { Id = 1, Name = "John Vick" };
             Customer c2 = new Customer { Id = 2, Name = "David Black" };

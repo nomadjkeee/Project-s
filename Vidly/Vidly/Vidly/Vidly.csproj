@@ -154,9 +154,14 @@
     <Compile Include="Migrations\202004080755383_InitMemberShipTable.Designer.cs">
       <DependentUpon>202004080755383_InitMemberShipTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004080814516_AddGenreTable.cs" />
+    <Compile Include="Migrations\202004080814516_AddGenreTable.Designer.cs">
+      <DependentUpon>202004080814516_AddGenreTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MemberShip.cs" />
     <Compile Include="Models\Movies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -234,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004080755383_InitMemberShipTable.resx">
       <DependentUpon>202004080755383_InitMemberShipTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080814516_AddGenreTable.resx">
+      <DependentUpon>202004080814516_AddGenreTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

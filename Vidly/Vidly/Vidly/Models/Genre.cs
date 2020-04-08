@@ -6,14 +6,11 @@ using System.Web;
 
 namespace Vidly.Models
 {
-    public class MemberShip
+    public class Genre
     {
         [Key]
         public int Id { get; set; }
-
         [Required]
-        public string MemberShipType { get; set; }
-        [Required]
-        public short PercentCount { get; set; }
+        public string GenreType { get; set; }
     }
 }
