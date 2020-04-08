@@ -14,6 +14,18 @@
                 <th>
                     <h5>Name</h5> 
                 </th>
+                <th>
+                    <h5>Birthday</h5>
+                </th>
+                <th>
+                    <h5>Email</h5>
+                </th>
+                <th>
+                    <h5>MemberShip</h5>
+                </th>
+                <th>
+                    <h5>Genre</h5>
+                </th>
             </tr>
         </thead>
         @foreach (var item in Model.Customers)
@@ -24,6 +36,18 @@
                 </td>
                 <td style="text-align:center">
                     @Html.ActionLink(item.Name,"Details",item)
+                </td>
+                <td>
+                    @item.Birthhday
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.MemberShip.MemberShipType
+                </td>
+                <td>
+                    @item.Genre.GenreType
                 </td>
             </tr>
         }

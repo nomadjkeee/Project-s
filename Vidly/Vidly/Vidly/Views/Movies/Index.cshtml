@@ -21,7 +21,7 @@
                     </th>
                     <th>
                         <h3>
-                            Type
+                            Genre Type
                         </h3>
                     </th>
                     <th>
@@ -29,24 +29,41 @@
                             Year
                         </h3>
                     </th>
+                    <th>
+                        <h3>
+                            Release Date
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Details
+                        </h3>
+                    </th>
                 </tr>
             </thead>
             @foreach (var item in Model.Movies)
             {
-                <tr>
-                    <td>
-                        @item.Id
-                    </td>
-                    <td>
-                        @Html.ActionLink(item.Name,"Details",item)                       
-                    </td>
-                    <td>
-                        @item.Type
-                    </td>
-                    <td>
-                        @item.Year
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @Html.ActionLink(item.Name, "Details", item)
+            </td>
+            <td>
+                @item.Genre.GenreType
+            </td>
+            <td>
+                @item.Year
+            </td>
+            <td>
+                @item.ReleaseDate
+            </td>
+            <td>
+                @item.Detail
+            </td>
+
+        </tr>
             }
         </table>
     </form>

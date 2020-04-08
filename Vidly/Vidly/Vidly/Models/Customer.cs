@@ -12,7 +12,7 @@ namespace Vidly.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        public DateTime Birthhday { get; set; }
+        public string Birthhday { get; set; }
         [MaxLength(255)]
         public string Email { get; set; }
         [Required]

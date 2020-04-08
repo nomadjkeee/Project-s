@@ -98,3 +98,8 @@ E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitMemberShipTable.r
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreTable.resources
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.ExpendMoviesTable.resources
 E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.ExpendMoviesTable1.resources
+E:\GitProject\Vidly\Vidly\Vidly\bin\Bogus.dll
+E:\GitProject\Vidly\Vidly\Vidly\bin\Bogus.xml
+E:\GitProject\Vidly\Vidly\Vidly\bin\ru\EntityFramework.SqlServer.resources.dll
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.ChangeCustomer.resources
+E:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddPropToMovies.resources

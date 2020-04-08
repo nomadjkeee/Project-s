@@ -10,13 +10,19 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        ApplicationDbContext applicationDbContext;
         // GET: Movies
         [HttpGet]
         public ActionResult Index()
         {
-           
+            applicationDbContext = new ApplicationDbContext();
+            var mList = new SomeFilmViewModel();
 
-            return View();
+            foreach (var item in applicationDbContext.Movies.Include("Genre").ToList())
+            {
+                mList.Movies.Add(item);
+            }
+            return View(mList);
         }
 
         public ViewResult Details(Movies movies)
