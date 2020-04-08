@@ -158,6 +158,14 @@
     <Compile Include="Migrations\202004080814516_AddGenreTable.Designer.cs">
       <DependentUpon>202004080814516_AddGenreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004080939197_ExpendMoviesTable.cs" />
+    <Compile Include="Migrations\202004080939197_ExpendMoviesTable.Designer.cs">
+      <DependentUpon>202004080939197_ExpendMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004080939359_ExpendMoviesTable1.cs" />
+    <Compile Include="Migrations\202004080939359_ExpendMoviesTable1.Designer.cs">
+      <DependentUpon>202004080939359_ExpendMoviesTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -242,6 +250,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004080814516_AddGenreTable.resx">
       <DependentUpon>202004080814516_AddGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080939197_ExpendMoviesTable.resx">
+      <DependentUpon>202004080939197_ExpendMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080939359_ExpendMoviesTable1.resx">
+      <DependentUpon>202004080939359_ExpendMoviesTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

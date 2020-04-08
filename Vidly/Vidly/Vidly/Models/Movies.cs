@@ -16,5 +16,13 @@ namespace Vidly.Models
         public short Year { get; set; }
         [Required]
         public string  Detail { get; set; }
+        [Required]
+        public int? GenreId { get; set; }
+        public Genre Genre { get; set; }
+        public ICollection<Customer> Customers { get; set; }
+        public Movies()
+        {
+            Customers = new List<Customer>();
+        }
     }
 }
