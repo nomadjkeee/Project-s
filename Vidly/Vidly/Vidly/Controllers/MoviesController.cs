@@ -27,8 +27,11 @@ namespace Vidly.Controllers
 
         public ViewResult Details(Movies movies)
         {
-
             return View(movies);
+        }
+        public ActionResult New()
+        {
+            return View();
         }
     }
 }
