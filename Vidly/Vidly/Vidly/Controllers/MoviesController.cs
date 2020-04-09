@@ -31,7 +31,28 @@ namespace Vidly.Controllers
         }
         public ActionResult New()
         {
-            return View();
+            applicationDbContext = new ApplicationDbContext();
+            var genresViewModel = new NewFirmViewModel
+            {
+                Genres = applicationDbContext.Genres.ToList()
+            };
+
+            return View(genresViewModel);
+        }
+        [HttpPost]
+        public ActionResult Create(Movies movies)
+        {
+            try
+            {
+                applicationDbContext = new ApplicationDbContext();
+                applicationDbContext.Movies.Add(movies);
+                applicationDbContext.SaveChanges();
+                return RedirectToAction("Index", "Movies");
+            }
+            catch (Exception)
+            {
+                return HttpNotFound(); 
+            } 
         }
     }
 }

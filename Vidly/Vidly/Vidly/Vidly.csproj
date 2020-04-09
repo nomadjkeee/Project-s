@@ -185,6 +185,7 @@
     <Compile Include="Models\Movies.cs" />
     <Compile Include="Models\MyContextInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\NewFirmViewModel.cs" />
     <Compile Include="ViewModel\SomeFilmViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

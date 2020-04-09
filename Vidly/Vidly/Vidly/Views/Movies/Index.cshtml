@@ -3,7 +3,14 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<br /><br />
+<div>
+    @using (Html.BeginForm("New", "Movies", FormMethod.Get))
+    {
+        <button type="submit" class="btn btn-primary">New movies</button>
+    }
+</div>
+<br /><br />
 <div>
     <form method="get">
         <table class=" table table-bordered">
@@ -64,7 +71,7 @@
             </td>
 
         </tr>
-            }
+                }
         </table>
     </form>
 </div>
