@@ -1,0 +1,78 @@
+﻿@using Vidly.ViewModel
+@model SomeFilmViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<br /><br />
+<div>
+    @using (Html.BeginForm("New", "Movies", FormMethod.Get))
+    {
+        <button type="submit" class="btn btn-primary">New movies</button>
+    }
+</div>
+<br /><br />
+<div>
+    <form method="get">
+        <table class=" table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        <h3>
+                            №
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Name
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Genre Type
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Year
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Release Date
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Details
+                        </h3>
+                    </th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Movies)
+            {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @Html.ActionLink(item.Name, "Details", item)
+            </td>
+            <td>
+                @item.Genre.GenreType
+            </td>
+            <td>
+                @item.Year
+            </td>
+            <td>
+                @item.ReleaseDate
+            </td>
+            <td>
+                @item.Detail
+            </td>
+
+        </tr>
+                }
+        </table>
+    </form>
+</div>
+
