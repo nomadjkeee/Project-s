@@ -206,3 +206,4 @@ D:\GitProject\Project-s\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResourc
 D:\GitProject\Project-s\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 D:\GitProject\Project-s\Vidly\Vidly\Vidly\obj\Debug\Vidly.dll
 D:\GitProject\Project-s\Vidly\Vidly\Vidly\obj\Debug\Vidly.pdb
+D:\GitProject\Project-s\Vidly\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
