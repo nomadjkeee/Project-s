@@ -1,7 +1,9 @@
-﻿
+﻿@using Vidly.ViewModel
+@model FilmTemplateViewModel
 @{
     ViewBag.Title = "Details";
 }
+<h2>Edit some movies</h2>
 
-<h2>@Model.Name@Model.Year</h2>
 
+@Html.Partial("_EditBody")

@@ -27,12 +27,20 @@ namespace Vidly.Controllers
 
         public ViewResult Details(Movies movies)
         {
-            return View(movies);
+            applicationDbContext = new ApplicationDbContext();
+            var editfilm = new FilmTemplateViewModel
+            {
+                Movies = movies,
+                Genres = applicationDbContext.Genres.ToList()
+
+            };
+            return View(editfilm);
         }
+        
         public ActionResult New()
         {
             applicationDbContext = new ApplicationDbContext();
-            var genresViewModel = new NewFirmViewModel
+            var genresViewModel = new FilmTemplateViewModel
             {
                 Genres = applicationDbContext.Genres.ToList()
             };
@@ -45,8 +53,24 @@ namespace Vidly.Controllers
             try
             {
                 applicationDbContext = new ApplicationDbContext();
-                applicationDbContext.Movies.Add(movies);
-                applicationDbContext.SaveChanges();
+
+                Movies moviesDB = applicationDbContext.Movies.FirstOrDefault(t => t.Name == movies.Name);
+
+                if(moviesDB==null)
+                {
+                    applicationDbContext.Movies.Add(movies);
+                    applicationDbContext.SaveChanges();
+                }
+                else
+                {
+                    moviesDB.Name = movies.Name;
+                    moviesDB.ReleaseDate = movies.ReleaseDate;
+                    moviesDB.GenreId = movies.GenreId;
+                    moviesDB.Year = movies.Year;
+                    applicationDbContext.Entry(moviesDB).State = System.Data.Entity.EntityState.Modified;
+                    applicationDbContext.SaveChanges();
+                }
+
                 return RedirectToAction("Index", "Movies");
             }
             catch (Exception)

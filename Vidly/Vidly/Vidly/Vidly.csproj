@@ -185,7 +185,8 @@
     <Compile Include="Models\Movies.cs" />
     <Compile Include="Models\MyContextInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\NewFirmViewModel.cs" />
+    <Compile Include="ViewModel\CustomerTemplateViewModel.cs" />
+    <Compile Include="ViewModel\FilmTemplateViewModel.cs" />
     <Compile Include="ViewModel\SomeFilmViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +231,8 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Home\New.cshtml" />
     <Content Include="Views\Movies\New.cshtml" />
+    <Content Include="Views\Movies\_EditBody.cshtml" />
+    <Content Include="Views\Customer\_EditBody.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

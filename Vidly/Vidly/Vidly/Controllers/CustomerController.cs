@@ -25,8 +25,16 @@ namespace Vidly.Controllers
 
         public ViewResult Details(Customer customer)
         {
+            applicationDbContext = new ApplicationDbContext();
+            var container = new CustomerTemplateViewModel
+            {
+                Customer = customer,
+                Genres = applicationDbContext.Genres.ToList(),
+                MemberShips = applicationDbContext.MemberShips.ToList()
+            };
 
-            return View(customer);
+            return View(container);
         }
+
     }
 }
