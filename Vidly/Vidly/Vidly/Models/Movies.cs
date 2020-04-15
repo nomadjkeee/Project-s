@@ -10,7 +10,7 @@ namespace Vidly.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Bad news for you")]
         public string Name { get; set; }
         [Required]
         public short Year { get; set; }

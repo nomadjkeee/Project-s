@@ -35,6 +35,17 @@ namespace Vidly.Controllers
 
             return View(container);
         }
+        [HttpGet]
+        public ViewResult NewCustomer()
+        {
+            applicationDbContext = new ApplicationDbContext();
+            var container = new CustomerTemplateViewModel
+            {
+                Genres = applicationDbContext.Genres.ToList(),
+                MemberShips = applicationDbContext.MemberShips.ToList()               
+            };
+            return View(container);
+        }
 
     }
 }

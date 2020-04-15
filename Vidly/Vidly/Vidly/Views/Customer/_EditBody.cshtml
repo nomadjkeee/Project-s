@@ -23,7 +23,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.MemberShipId)
-        @Html.DropDownListFor(m => m.Customer.MemberShipId, new SelectList(Model.MemberShips, "Id", "MemberShipType"), Model.Customer.Name == null ? "Select some memberShips" : Model.MemberShips.First(m => m.Id == Model.Customer.MemberShipId).ToString(), new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Customer.MemberShipId, new SelectList(Model.MemberShips, "Id", "MemberShipType"), Model.Customer == null ? "Select some memberShips" : Model.MemberShips.First(m => m.Id == Model.Customer.MemberShipId).MemberShipType, new { @class = "form-control" })
     </div>
 
     <div class="btn-block">
