@@ -10,18 +10,26 @@ namespace Vidly.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage ="Bad news for you")]
+
+        [Required]
         public string Name { get; set; }
+
         [Required]
         public short Year { get; set; }
+
         [Required]
         public string  Detail { get; set; }
+
         [Required]
         public short ReleaseDate { get; set; }
+
         [Required]
         public int? GenreId { get; set; }
+
         public Genre Genre { get; set; }
+
         public ICollection<Customer> Customers { get; set; }
+
         public Movies()
         {
             Customers = new List<Customer>();

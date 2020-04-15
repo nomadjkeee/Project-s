@@ -296,7 +296,6 @@ D:\GitProject\Vidly\Vidly\Vidly\bin\ru\System.Web.Razor.resources.dll
 D:\GitProject\Vidly\Vidly\Vidly\bin\ru\System.Web.WebPages.resources.dll
 D:\GitProject\Vidly\Vidly\Vidly\bin\ru\System.Web.WebPages.Deployment.resources.dll
 D:\GitProject\Vidly\Vidly\Vidly\bin\ru\System.Web.WebPages.Razor.resources.dll
-D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
 D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.FirstInit.resources
 D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitCustomerTable.resources
 D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMemberShipTable.resources

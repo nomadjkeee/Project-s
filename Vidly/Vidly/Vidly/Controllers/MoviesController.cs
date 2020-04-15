@@ -28,23 +28,22 @@ namespace Vidly.Controllers
         public ViewResult Details(Movies movies)
         {
             applicationDbContext = new ApplicationDbContext();
-            var editfilm = new FilmTemplateViewModel
+            var editfilm = new FilmTemplateViewModel(movies)
             {
-                Movies = movies,
                 Genres = applicationDbContext.Genres.ToList()
 
             };
-            return View(editfilm);
+            return View("New",editfilm);
         }
         
-        public ActionResult New()
+        public ActionResult New(Movies movies)
         {
             applicationDbContext = new ApplicationDbContext();
-            var genresViewModel = new FilmTemplateViewModel
-            {
-                Genres = applicationDbContext.Genres.ToList()
+            var genresViewModel = new FilmTemplateViewModel(movies)
+            {               
+                Genres = applicationDbContext.Genres.ToList(),   
             };
-
+            
             return View(genresViewModel);
         }
         [HttpPost]
