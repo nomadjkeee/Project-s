@@ -177,6 +177,10 @@
     <Compile Include="Migrations\202004081259329_AddPropToMovies.Designer.cs">
       <DependentUpon>202004081259329_AddPropToMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004161249210_ChangeCustomerAttribute.cs" />
+    <Compile Include="Migrations\202004161249210_ChangeCustomerAttribute.Designer.cs">
+      <DependentUpon>202004161249210_ChangeCustomerAttribute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -282,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004081259329_AddPropToMovies.resx">
       <DependentUpon>202004081259329_AddPropToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161249210_ChangeCustomerAttribute.resx">
+      <DependentUpon>202004161249210_ChangeCustomerAttribute.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

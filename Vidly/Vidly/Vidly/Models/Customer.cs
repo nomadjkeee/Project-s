@@ -18,7 +18,6 @@ namespace Vidly.Models
         [Required]
         public int? MemberShipId { get; set; }
         public MemberShip MemberShip { get; set; }
-        [Required]
         public int? GenreId { get; set; }
         public Genre Genre { get; set; }
     }

@@ -9,7 +9,7 @@
     <br /><br /><br />
 
     <div class="form-group">
-        <button type="submit" class="btn-primary">New Customer</button>
+        <button type="submit" class="btn btn-primary">New Customer</button>
     </div>
 }
     <div class="table-hover">
@@ -31,9 +31,7 @@
                     <th>
                         <h5>MemberShip</h5>
                     </th>
-                    <th>
-                        <h5>Genre</h5>
-                    </th>
+                    
                 </tr>
             </thead>
             @foreach (var item in Model.Customers)
@@ -54,9 +52,7 @@
                     <td>
                         @item.MemberShip.MemberShipType
                     </td>
-                    <td>
-                        @item.Genre.GenreType
-                    </td>
+                    
                 </tr>
             }
         </table>

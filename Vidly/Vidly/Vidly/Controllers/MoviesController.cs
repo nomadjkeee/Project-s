@@ -25,49 +25,62 @@ namespace Vidly.Controllers
             return View(mList);
         }
 
-        public ViewResult Details(Movies movies)
-        {
-            applicationDbContext = new ApplicationDbContext();
-            var editfilm = new FilmTemplateViewModel(movies)
-            {
-                Genres = applicationDbContext.Genres.ToList()
+        //public ViewResult Details(Movies movies)
+        //{
+        //    applicationDbContext = new ApplicationDbContext();
+        //    var editfilm = new FilmTemplateViewModel(movies)
+        //    {
+        //        Genres = applicationDbContext.Genres.ToList()
 
-            };
-            return View("New",editfilm);
-        }
-        
+        //    };
+        //    return View("New",editfilm);
+        //}
+
         public ActionResult New(Movies movies)
         {
             applicationDbContext = new ApplicationDbContext();
-            var genresViewModel = new FilmTemplateViewModel(movies)
-            {               
-                Genres = applicationDbContext.Genres.ToList(),   
+            var genresViewModel = new MoviesTemplateViewModel(movies)
+            {
+                Genres = applicationDbContext.Genres.ToList(),
             };
-            
+
             return View(genresViewModel);
         }
         [HttpPost]
-        public ActionResult Create(Movies movies)
+        public ActionResult Create(MoviesTemplateViewModel moviesTemplate)
         {
+            applicationDbContext = new ApplicationDbContext();
+
             try
             {
                 if (ModelState.IsValid)
                 {
-                    applicationDbContext = new ApplicationDbContext();
-
-                    Movies moviesDB = applicationDbContext.Movies.FirstOrDefault(t => t.Id == movies.Id);
+                    Movies moviesDB = applicationDbContext.Movies.FirstOrDefault(t => t.Id == moviesTemplate.Id);
 
                     if (moviesDB == null)
                     {
-                        applicationDbContext.Movies.Add(movies);
+                        moviesDB = new Movies
+                        {
+                            Name = moviesTemplate.Name,
+                            ReleaseDate = moviesTemplate.ReleaseDate,
+                            GenreId = moviesTemplate.GenreId,
+                            Year = moviesTemplate.Year,
+                            Detail = moviesTemplate.Detail
+
+                        };
+                        applicationDbContext.Entry(moviesDB).State = System.Data.Entity.EntityState.Added;
                         applicationDbContext.SaveChanges();
                     }
                     else
                     {
-                        moviesDB.Name = movies.Name;
-                        moviesDB.ReleaseDate = movies.ReleaseDate;
-                        moviesDB.GenreId = movies.GenreId;
-                        moviesDB.Year = movies.Year;
+
+                        moviesDB.Name = moviesTemplate.Name;
+                        moviesDB.ReleaseDate = moviesTemplate.ReleaseDate;
+                        moviesDB.GenreId = moviesTemplate.GenreId;
+                        moviesDB.Year = moviesTemplate.Year;
+                        moviesDB.Detail = moviesTemplate.Detail;
+
+
                         applicationDbContext.Entry(moviesDB).State = System.Data.Entity.EntityState.Modified;
                         applicationDbContext.SaveChanges();
                     }
@@ -76,14 +89,15 @@ namespace Vidly.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("New", "Movies");
+                    moviesTemplate.Genres = applicationDbContext.Genres.ToList();
+                    return View("New", moviesTemplate);
                 }
-                
+
             }
             catch (Exception)
             {
-                return HttpNotFound(); 
-            } 
+                return HttpNotFound();
+            }
         }
     }
 }

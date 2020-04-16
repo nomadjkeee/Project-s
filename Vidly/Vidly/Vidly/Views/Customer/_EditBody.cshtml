@@ -4,30 +4,33 @@
 @using (Html.BeginForm("Create", "Customer", FormMethod.Post))
 {
 
-    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.HiddenFor(m => m.Id)
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Name)
-        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Name)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Birthhday)
-        @Html.TextBoxFor(m => m.Customer.Birthhday, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Birthhday)
+        @Html.TextBoxFor(m => m.Birthhday, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Birthhday)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Email)
-        @Html.TextBoxFor(m => m.Customer.Email, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Email)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.MemberShipId)
-        @Html.DropDownListFor(m => m.Customer.MemberShipId, new SelectList(Model.MemberShips, "Id", "MemberShipType"), Model.Customer == null ? "Select some memberShips" : Model.MemberShips.First(m => m.Id == Model.Customer.MemberShipId).MemberShipType, new { @class = "form-control" })
+        @Html.LabelFor(m => m.MemberShipId)
+        @Html.DropDownListFor(m => m.MemberShipId, new SelectList(Model.MemberShips, "Id", "MemberShipType"), "Select some memberShips", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.MemberShipId)
     </div>
 
     <div class="btn-block">
         <button type="submit" class="btn-primary" style="width:20%;height:20%">Add</button>
     </div>
-
 }

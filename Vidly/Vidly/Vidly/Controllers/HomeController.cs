@@ -11,6 +11,7 @@ namespace Vidly.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext applicationDbContext;
+
         public ActionResult Index()
         {
             return View();

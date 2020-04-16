@@ -1,11 +1,15 @@
 ﻿@using Vidly.ViewModel
-@model FilmTemplateViewModel
+@model MoviesTemplateViewModel
+    @{ 
+        ViewBag.Title = Model.Title;
+    }
 @using (Html.BeginForm("Create", "Movies", FormMethod.Post))
 {
     @Html.ValidationSummary()
     <div class="form-group">
         @Html.HiddenFor(m => m.Id)
     </div>
+
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })

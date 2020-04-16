@@ -26,9 +26,8 @@ namespace Vidly.Controllers
         public ViewResult Details(Customer customer)
         {
             applicationDbContext = new ApplicationDbContext();
-            var container = new CustomerTemplateViewModel
-            {
-                Customer = customer,
+            var container = new CustomerTemplateViewModel(customer)
+            {           
                 Genres = applicationDbContext.Genres.ToList(),
                 MemberShips = applicationDbContext.MemberShips.ToList()
             };
@@ -36,16 +35,62 @@ namespace Vidly.Controllers
             return View(container);
         }
         [HttpGet]
-        public ViewResult NewCustomer()
+        public ViewResult NewCustomer(CustomerTemplateViewModel customer)
         {
             applicationDbContext = new ApplicationDbContext();
-            var container = new CustomerTemplateViewModel
-            {
-                Genres = applicationDbContext.Genres.ToList(),
-                MemberShips = applicationDbContext.MemberShips.ToList()               
-            };
-            return View(container);
-        }
 
+            customer.Genres = applicationDbContext.Genres.ToList();
+            customer.MemberShips = applicationDbContext.MemberShips.ToList();               
+            return View(customer);
+        }
+        [HttpPost]
+        public ActionResult Create(CustomerTemplateViewModel customerTemplate)
+        {
+            applicationDbContext = new ApplicationDbContext();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Customer customerDB = applicationDbContext.Customers.FirstOrDefault(t => t.Id == customerTemplate.Id);
+
+                    if (customerDB == null)
+                    {
+                        customerDB = new Customer()
+                        {
+                            Name = customerTemplate.Name,
+                            Birthhday = customerTemplate.Birthhday,
+                            Email = customerTemplate.Email,
+                            // GenreId = customerTemplate.GenreId,
+                            MemberShipId = customerTemplate.MemberShipId
+                        };
+                        applicationDbContext.Entry(customerDB).State = System.Data.Entity.EntityState.Added;
+                         //applicationDbContext.SaveChanges();
+                    }
+                    else
+                    {
+                        customerDB.Name = customerTemplate.Name;
+                        customerDB.Birthhday = customerTemplate.Birthhday;
+                        customerDB.Email = customerTemplate.Email;
+                        // GenreId = customerTemplate.GenreId,
+                        customerDB.MemberShipId = customerTemplate.MemberShipId;
+                       
+                        applicationDbContext.Entry(customerDB).State = System.Data.Entity.EntityState.Modified;
+                       
+                    }
+                    applicationDbContext.SaveChanges();
+                    return RedirectToAction("Index", "Customer");
+                }
+                else
+                {
+                    customerTemplate.MemberShips = applicationDbContext.MemberShips.ToList();
+                    return View("NewCustomer", customerTemplate);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }          
+        }
     }
 }

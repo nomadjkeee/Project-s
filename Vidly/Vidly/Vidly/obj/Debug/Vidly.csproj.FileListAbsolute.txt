@@ -311,3 +311,5 @@ D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.dll
 D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.pdb
 D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
+D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
+D:\GitProject\Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.ChangeCustomerAttribute.resources
