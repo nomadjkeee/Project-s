@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -12,12 +13,19 @@ namespace Vidly.ViewModel
         public int Id { get; set; }
 
         [Required]
+        [DisplayName("Full name")]
         public string Name { get; set; }
+
         [Required]
-        public string Birthhday { get; set; }
+        [DisplayName("Your Birthday")]
+        public string Birthhday { get; set; } = "1 Jan 0001";      
+        
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
+
         [Required]
+        [DisplayName("Member ship")]
         public int? MemberShipId { get; set; }
 
         public MemberShip MemberShip { get; set; }

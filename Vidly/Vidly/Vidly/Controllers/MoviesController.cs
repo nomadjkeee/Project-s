@@ -25,16 +25,7 @@ namespace Vidly.Controllers
             return View(mList);
         }
 
-        //public ViewResult Details(Movies movies)
-        //{
-        //    applicationDbContext = new ApplicationDbContext();
-        //    var editfilm = new FilmTemplateViewModel(movies)
-        //    {
-        //        Genres = applicationDbContext.Genres.ToList()
 
-        //    };
-        //    return View("New",editfilm);
-        //}
 
         public ActionResult New(Movies movies)
         {

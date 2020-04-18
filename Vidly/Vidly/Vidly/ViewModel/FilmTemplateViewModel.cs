@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -17,12 +18,13 @@ namespace Vidly.ViewModel
         public string Name { get; set; }
 
         [Required]
-        public short Year { get; set; }
+        public short Year { get; set; } 
 
         [Required]
         public string Detail { get; set; }
 
         [YearValidation]
+        [DisplayName("Realease Date")]
         public short ReleaseDate { get; set; }
 
         [Required]
