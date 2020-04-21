@@ -71,5 +71,17 @@ namespace Vidly.Controllers.Api
             customerDB.MemberShipId = customer.MemberShipId;
 
         }
+        [HttpDelete]
+        public void DeleteCustomer(int id)
+        {
+            var customerDB = _context.Customers.SingleOrDefault(t => t.Id == id);
+
+            if (customerDB == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            _context.Entry(customerDB).State = System.Data.Entity.EntityState.Deleted;
+            _context.SaveChanges();
+
+        }
     }
 }

@@ -12,7 +12,7 @@
     </div>
 }
     <div class="table-hover">
-        <table class="table table-bordered">
+        <table id="customers" class="table table-bordered">
             <thead>
                 <tr>
                     <th>
@@ -29,6 +29,9 @@
                     </th>
                     <th>
                         <h5>MemberShip</h5>
+                    </th>
+                    <th>
+                        <h5>Delete</h5>
                     </th>
                     
                 </tr>
@@ -51,11 +54,32 @@
                     <td>
                         @item.MemberShip.MemberShipType
                     </td>
+                    <td>
+                        <button data-customer-id="@item.Id" class="btn-link js-delete">Delete</button>
+                    </td>
                     
                 </tr>
             }
         </table>
     </div>
+@section scripts{ 
+  <script>
+      $(document).ready(function () {
+          $("#customers .js-delete").on("click", function () {
+              var button = $(this);
+              if (confirm("Are you sure to want delete customer ?")) {
+                  $.ajax({
+                      url: "api/customers/" + button.attr("data-customer-Id"),
+                      method: "DELETE",
+                      success: function () {
+                          button.parents("tr").remove();
+                      }
+                  })
+              }
+          });
+      });
+  </script>
+}
 
 
 
