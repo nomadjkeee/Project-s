@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Data.Entity;
 
-    public class MyContextInitialize:CreateDatabaseIfNotExists<ApplicationDbContext>
+    public class MyContextInitialize:DropCreateDatabaseAlways<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
