@@ -14,18 +14,14 @@ namespace Vidly.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            applicationDbContext = new ApplicationDbContext();
-           
-            var cList = new SomeFilmViewModel();
-            cList.Customers = applicationDbContext.Customers.Include("MemberShip").Include("Genre").ToList();
 
-
-            return View(cList);
+            return View();
         }
 
-        public ViewResult Details(Customer customer)
+        public ViewResult Details(int id)
         {
             applicationDbContext = new ApplicationDbContext();
+            Customer customer = applicationDbContext.Customers.Single(t => t.Id == id);
             var container = new CustomerTemplateViewModel(customer)
             {           
                 Genres = applicationDbContext.Genres.ToList(),

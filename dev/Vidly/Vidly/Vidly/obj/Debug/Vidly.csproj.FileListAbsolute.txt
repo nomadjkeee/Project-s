@@ -393,7 +393,6 @@ E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\System.Web.WebPages.Deployment.dll
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\System.Web.WebPages.dll
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\System.Web.WebPages.Razor.dll
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\WebGrease.dll
-E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\AutoMapper.pdb
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\AutoMapper.xml
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\Bogus.xml
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\bin\EntityFramework.xml
@@ -436,3 +435,4 @@ E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInpu
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\obj\Debug\Vidly.dll
 E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\obj\Debug\Vidly.pdb
+E:\GitProjectSEcond\dev\Vidly\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
