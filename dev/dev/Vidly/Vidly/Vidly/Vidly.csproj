@@ -202,8 +202,10 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerDto.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\GenreDto.cs" />
     <Compile Include="Models\MemberShip.cs" />
     <Compile Include="Models\Movies.cs" />
+    <Compile Include="Models\MoviesDto.cs" />
     <Compile Include="Models\MyContextInitialize.cs" />
     <Compile Include="Models\YearValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -7,7 +7,7 @@
     {
         protected override void Seed(ApplicationDbContext context)
         {
-            Genre g0 = new Genre {  GenreType="Comedy" };
+            Genre g0 = new Genre { GenreType="Comedy" };
             Genre g1 = new Genre { GenreType = "Action" };
             Genre g2 = new Genre { GenreType = "Thriller" };
             Genre g3 = new Genre { GenreType = "Cartoon" };

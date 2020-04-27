@@ -73,10 +73,7 @@
                         },
                         columns: [
                             {
-                                data: "Id",
-                                render: function (data, type, customer) {
-                                    return customer.Id;
-                                }
+                                data: "Id",                               
                             },
 
                             {
@@ -86,22 +83,13 @@
                                 }
                             },
                             {
-                                data: "Birthhday",
-                                render: function (data, type, customer) {
-                                    return customer.Birthhday;
-                                }
+                                data: "Birthhday",                               
                             },
                             {
-                                data: "Email",
-                                render: function (data, type, customer) {
-                                    return customer.Email;
-                                }
+                                data: "Email",                               
                             },
                             {
-                                data: "MemberShip",
-                                render: function (data,type,customer) {
-                                    return customer.MemberShipDtoId;
-                                }
+                                data: "MemberShip.MemberShipType",                               
                             },
                             {
                                 data: "Id",
@@ -109,17 +97,7 @@
                                     return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
                                 }
                             }
-                            //{
-                            //    data:
-                            //}
-                         
-                            //}    },
-                            //{
-                            //    data: "id",
-                            //    render: function (data) {
-                            //        return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
-
-                            //    
+    
                         ]
                     });
                 
@@ -133,7 +111,6 @@
                                 method: "DELETE",
                                 success: function () {
                                     table.row(button.parents("tr")).remove().draw();
-                                    //button.parents("tr").remove();
                                 }
                             })
                         }

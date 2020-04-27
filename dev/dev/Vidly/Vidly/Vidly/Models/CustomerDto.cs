@@ -11,8 +11,10 @@ namespace Vidly.Models
         public string Name { get; set; }
         public string Birthhday { get; set; }
         public string Email { get; set; }
-        public MemberShipDto MemberShipDto { get; set; }
+        public MemberShipDto MemberShip { get; set; }
         public int? MemberShipId { get; set; }
+        public int? GenreId { get; set; }
+        public GenreDto Genre { get; set; }
 
     }
     public class MemberShipDto

@@ -1,81 +1,180 @@
-﻿@using Vidly.ViewModel
-@model SomeFilmViewModel
-@{
-    ViewBag.Title = "Index";
-}
-<br /><br />
-      <div>
-          @using (Html.BeginForm("New", "Movies", FormMethod.Get))
-          {
-              <button type="submit" class="btn btn-primary">New movies</button>
-              <br />
-              <br />
-              <div>
-                  <form method="get">
-                      <table class=" table table-bordered">
-                          <thead>
-                              <tr>
-                                  <th>
-                                      <h3>
-                                          №
-                                      </h3>
-                                  </th>
-                                  <th>
-                                      <h3>
-                                          Name
-                                      </h3>
-                                  </th>
-                                  <th>
-                                      <h3>
-                                          Genre Type
-                                      </h3>
-                                  </th>
-                                  <th>
-                                      <h3>
-                                          Year
-                                      </h3>
-                                  </th>
-                                  <th>
-                                      <h3>
-                                          Release Date
-                                      </h3>
-                                  </th>
-                                  <th>
-                                      <h3>
-                                          Details
-                                      </h3>
-                                  </th>
-                              </tr>
-                          </thead>
-                          @foreach (var item in Model.Movies)
-                          {
-                              <tr>
-                                  <td>
-                                      @item.Id
-                                  </td>
-                                  <td>
-                                      @Html.ActionLink(item.Name, "New", item)
-                                  </td>
-                                  <td>
-                                      @item.Genre.GenreType
-                                  </td>
-                                  <td>
-                                      @item.Year
-                                  </td>
-                                  <td>
-                                      @item.ReleaseDate
-                                  </td>
-                                  <td>
-                                      @item.Detail
-                                  </td>
+﻿<div>
 
-                              </tr>
-                          }
-                      </table>
-                  </form>
-              </div>
-          }
-      </div>
+            <table id="movies" class=" table table-bordered ">
+                <thead>
+                    <tr>
+                        <th id="Id">
+                            <h3>
+                                №
+                            </h3>
+                        </th>
+                        <th id="Name">
+                            <h3>
+                                Name
+                            </h3>
+                        </th>
 
+                        <th id="Year">
+                            <h3>
+                                Year
+                            </h3>
+                        </th>
+                        <th id="Detail">
+                            <h3>
+                                Details
+                            </h3>
+                        </th>
+                        <th id="Release">
+                            <h3>
+                                Release Date
+                            </h3>
+                        </th>
+                        <th>
+                            <h3>
+                                Delete
+                            </h3>
+                        </th>
+                        <th id="Genre">
+                            <h3>
+                                Genre
+                            </h3>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+    </div>
+
+
+
+    @section scripts{
+        <script>
+            $(document).ready(function () {
+                var table = $("#movies").DataTable({
+                    ajax: {
+                        url: "/api/movies/",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "Id",
+                        },
+                        {
+                            data: "Name",
+                        },
+                        {
+                            data: "Year",
+
+                        },
+                        {
+                            data: "Detail",
+                        },
+                        {
+                            data: "ReleaseDate",
+
+                        },
+                        {
+                            data: "Id",
+                            render: function (data) {
+                                return "<button class='btn-link js-delete' data-movies-id=" + data + ">Delete</button>";
+                            }
+                        },
+                        {
+                            data: "Genre.GenreType"
+
+                        }
+
+                    ]
+                });
+
+                $("#movies").on("click", ".js-delete", function () {
+                    var button = $(this);
+                    bootbox.confirm("Are you sure to want delete movies ?", function (result) {
+                        if (result) {
+                            $.ajax({                              
+                                url: "api/movies/" + button.attr("data-movies-Id"),
+                                method: "DELETE",
+                                success: function () {
+                                    table.row(button.parents("tr")).remove().draw();
+                                    //button.parents("tr").remove();
+                                }
+                            })
+                        }
+                    });
+                });
+            });
+        </script>
+    }
+
+@*<div>
+    <table id="movies" class=" table table-bordered ">
+        <thead>
+            <tr>
+                <th >
+                    <h3>
+                        Company name
+                    </h3>
+                </th>
+
+                <th >
+                    <h3>
+                        Beta
+                    </h3>
+                </th>
+                <th >
+                    <h3>
+                        Week change
+                    </h3>
+                </th>
+                <th >
+                    <h3>
+                        Week Hight
+                    </h3>
+                </th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $("#movies").DataTable({
+                ajax: {
+                    url: "https://cloud.iexapis.com/stable/stock/aapl/stats/latestPrice?token=pk_ba9bb61a36a24ec3a5ae70362941f41c",
+                    contentType: "application/json",
+                    dataSrc: "",                    
+                    columns: [
+                        {
+                            data: "companyName",
+                            render: function (data, type, obj) {
+                                return data.companyName;
+                            }
+                        },
+                        {
+                            data: "beta",
+                            render: function (data, type, obj) {
+                                return data.beta;
+                            }
+                        },
+                        {
+                            data: "week52change",
+                            render: function (data, type, obj) {
+                                return week52change;
+                            }
+                        },
+                        {
+                            data: "week52high",
+                            render: function (data, type, obj) {
+                                return week52high;
+                            }
+                        },
+                    ]
+                },  
+            });
+        });
+    </script>
+}*@
 
 
