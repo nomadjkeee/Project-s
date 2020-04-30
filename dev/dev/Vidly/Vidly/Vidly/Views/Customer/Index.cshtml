@@ -11,26 +11,26 @@
         <button type="submit" class="btn btn-primary">New Customer</button>
     </div>
 }
-<div class="table-hover">
-    <table id="customers" class="table table-bordered">
+<div>
+    <table id="customers" class="table table-bordered ">
         <thead>
-            <tr>
+            <tr class="table-primary" >
                 <th id="Id">
                     <h5>№</h5>
                 </th>
                 <th id="Name">
                     <h5>Name</h5>
                 </th>
-                <th>
+                <th >
                     <h5>Birthday</h5>
                 </th>
-                <th>
+                <th >
                     <h5>Email</h5>
                 </th>
-                <th>
+                <th >
                     <h5>MemberShip</h5>
                 </th>
-                <th>
+                <th >
                     <h5>Delete</h5>
                 </th>
 
@@ -66,48 +66,88 @@
         <script>
             $(document).ready(function () {
 
-                    var table = $("#customers").DataTable({
-                        ajax: {
-                            url: "/api/customers/",
-                            dataSrc: ""
-                        },
-                        columns: [
-                            {
-                                data: "Id",                               
-                            },
+                var table = $("#customers").DataTable({                    
+                    "paging": false,
+                    "ordering": true,
+                    "info": false,
+                    "searching": false,
 
-                            {
-                                data: "Name",
-                                render: function (data, type, customer) {
-                                    return "<a href='/Customer/Details/" + customer.Id + "'>" + customer.Name;
-                                }
-                            },
-                            {
-                                data: "Birthhday",                               
-                            },
-                            {
-                                data: "Email",                               
-                            },
-                            {
-                                data: "MemberShip.MemberShipType",                               
-                            },
-                            {
-                                data: "Id",
-                                render: function (data) {
-                                    return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
-                                }
+                    ajax: {
+                        url: "/api/customers/",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "Id",
+                        },
+
+                        {
+                            data: "Name",
+                            render: function (data, type, customer) {
+                                return "<a href='/Customer/Details/" + customer.Id + "'>" + customer.Name;
                             }
-    
-                        ]
-                    });
-                
+                        },
+                        {
+                            data: "Birthhday",
+                        },
+                        {
+                            data: "Email",
+                        },
+                        {
+                            data: "MemberShip.MemberShipType",
+                        },
+                        {
+                            data: "Id",
+                            render: function (data) {
+                                return "<button class='btn btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
+                            }
+                        }
+
+                    ]
+                });
+            //$(document).ready(function () {
+
+            //    var table = $("#customers").DataTable({
+            //            ajax: {
+            //                url: "/api/customers/",
+            //                dataSrc: ""
+            //            },
+            //            columns : [
+            //                {
+            //                    data: "Id",
+            //                },
+
+            //                {
+            //                    data: "Name",
+            //                    render: function (data, type, customer) {
+            //                        return "<a href='/Customer/Details/" + customer.Id + "'>" + customer.Name;
+            //                    }
+            //                },
+            //                {
+            //                    data: "Birthhday",
+            //                },
+            //                {
+            //                    data: "Email",
+            //                },
+            //                {
+            //                    data: "MemberShip.MemberShipType",
+            //                },
+            //                {
+            //                    data: "Id",
+            //                    render: function (data) {
+            //                        return "<button class='btn btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
+            //                    }
+            //                }
+
+            //            ]
+            //        });
 
                 $("#customers").on("click", ".js-delete", function () {
                     var button = $(this);
                     bootbox.confirm("Are you sure to want delete customer ?", function (result) {
                         if (result) {
                             $.ajax({
-                                url: "api/customers/" + button.attr("data-customer-Id"),
+                                url: "/api/customers/" + button.attr("data-customer-Id"),
                                 method: "DELETE",
                                 success: function () {
                                     table.row(button.parents("tr")).remove().draw();
