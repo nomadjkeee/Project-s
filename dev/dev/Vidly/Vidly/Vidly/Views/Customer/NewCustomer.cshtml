@@ -10,31 +10,32 @@
 
 @using (Html.BeginForm("Create", "Customer", FormMethod.Post))
 {
+    @Html.ValidationSummary("");
 
     @Html.HiddenFor(m => m.Id)
 
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Name)
+        @*@Html.ValidationMessageFor(m => m.Name)*@
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Birthhday)
         @Html.TextBoxFor(m => m.Birthhday, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Birthhday)
+        @*@Html.ValidationMessageFor(m => m.Birthhday)*@
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Email)
         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Email)
+        @*@Html.ValidationMessageFor(m => m.Email)*@
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.MemberShipId)
         @Html.DropDownListFor(m => m.MemberShipId, new SelectList(Model.MemberShips, "Id", "MemberShipType"), "Select some memberShips", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.MemberShipId)
+        @*@Html.ValidationMessageFor(m => m.MemberShipId)*@
     </div>
 
     <div class="form-group">

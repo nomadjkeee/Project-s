@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table id="movies" class="table table-hover border">
+    <thead>
+        <tr>
+            <th style="width:2%" >№</th>
+            <th >Name</th>
+            <th style="width:15%">Realese Date</th>
+            <th>Detail</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+</table>
+
+@section scripts{
+    
+    <script>
+
+        $(document).ready(function () {
+
+            var table = $("#movies").DataTable({
+                "searching": false,
+                "info": false,
+                "paging": false,
+
+                ajax: {
+                    url: "/api/movies/",
+                    dataSrc: ""
+                },
+
+                columns: [
+
+                    {
+                        data:"Id",
+                    },
+                    {
+                        data: "Id",
+                        render: function (data, type, movies) {
+                            return "<a href='/Movies/Detail/" +movies.Id + "'/>" + movies.Name;
+                        }
+                    },
+                    {
+                        data:"ReleaseDate",
+                    },
+                    {
+                        data:"Detail",
+                    },
+                    {
+                        data:"Genre.GenreType"
+                    }
+
+
+
+                ]
+
+
+
+            })
+
+
+        });
+
+
+    </script>
+    }
+
+

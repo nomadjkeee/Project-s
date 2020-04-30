@@ -36,7 +36,8 @@ namespace Vidly.Controllers
             applicationDbContext = new ApplicationDbContext();
 
             customer.Genres = applicationDbContext.Genres.ToList();
-            customer.MemberShips = applicationDbContext.MemberShips.ToList();               
+            customer.MemberShips = applicationDbContext.MemberShips.ToList();
+            ModelState.Clear();
             return View(customer);
         }
         [HttpPost]

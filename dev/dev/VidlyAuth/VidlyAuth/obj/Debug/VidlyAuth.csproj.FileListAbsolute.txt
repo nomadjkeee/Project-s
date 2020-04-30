@@ -1,3 +1,4 @@
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csi.exe.config
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\VidlyAuth.dll.config
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\VidlyAuth.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\VidlyAuth.pdb
@@ -5,7 +6,6 @@ D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csc.exe
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csc.exe.config
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csc.rsp
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csi.exe
-D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csi.exe.config
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\csi.rsp
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -52,6 +52,7 @@ D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\VBCSCompiler.exe
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\roslyn\VBCSCompiler.exe.config
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Antlr3.Runtime.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\AutoMapper.dll
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Bogus.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\EntityFramework.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\EntityFramework.SqlServer.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Microsoft.AspNet.Identity.Core.dll
@@ -70,7 +71,10 @@ D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Microsoft.Owin.Security.Twitter.dl
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Microsoft.Web.Infrastructure.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Newtonsoft.Json.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Owin.dll
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Net.Http.Formatting.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Helpers.dll
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Http.dll
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Http.WebHost.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Mvc.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Optimization.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Razor.dll
@@ -79,6 +83,10 @@ D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.WebPages.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.WebPages.Razor.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\WebGrease.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\AutoMapper.xml
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\Bogus.xml
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Net.Http.Formatting.xml
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Http.xml
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Http.WebHost.xml
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Helpers.xml
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Mvc.xml
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\System.Web.Optimization.xml
@@ -122,7 +130,8 @@ D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\ru\Microsoft.Owin.Security.Faceboo
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.csprojAssemblyReference.cache
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.Migrations.FirstInit.resources
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.csproj.GenerateResource.cache
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.csproj.CoreCompileInputs.cache
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.csproj.CopyComplete
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.dll
