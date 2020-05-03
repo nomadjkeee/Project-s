@@ -8,6 +8,7 @@ namespace VidlyAuth.Controllers
 {
     public class MoviesController : Controller
     {
+        [Authorize(Roles = "CanManage")]
         // GET: Movies
         public ActionResult Index()
         {

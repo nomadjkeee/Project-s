@@ -12,11 +12,11 @@ namespace VidlyAuth.Controllers
         public DataBaseContext dataBaseContext;
         public ActionResult Index()
         {
-            dataBaseContext = new DataBaseContext();
-            var t = dataBaseContext.Movies.ToList();
+            //dataBaseContext = new DataBaseContext();
+            //var t = dataBaseContext.Movies.ToList();
             return View();
         }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

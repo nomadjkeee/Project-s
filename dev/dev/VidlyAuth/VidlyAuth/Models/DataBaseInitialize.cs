@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace VidlyAuth.Models
 {
-    public class DataBaseInitialize:DropCreateDatabaseAlways<DataBaseContext>
+    public class DataBaseInitialize:DropCreateDatabaseIfModelChanges<DataBaseContext>
     {
         protected override void Seed(DataBaseContext context)
         {

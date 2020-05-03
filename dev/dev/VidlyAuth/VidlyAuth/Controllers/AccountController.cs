@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using VidlyAuth.Models;
@@ -155,6 +156,11 @@ namespace VidlyAuth.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //var store = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var manager = new RoleManager<IdentityRole>(store);
+                    //await manager.CreateAsync(new IdentityRole("CanManage"));
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManage");
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // Дополнительные сведения о включении подтверждения учетной записи и сброса пароля см. на странице https://go.microsoft.com/fwlink/?LinkID=320771.
