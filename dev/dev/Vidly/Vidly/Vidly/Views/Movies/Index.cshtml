@@ -1,0 +1,206 @@
+﻿@*@using (Html.BeginForm("New", "Movies", FormMethod.Get))
+{
+    <br />*@
+    @*<br />
+    <div class="form-group">
+       &nbsp; <button type="submit" class="btn btn-primary">New Movies</button>
+    </div>
+}
+<div>
+
+    <table id="movies" class="table table-bordered ">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col" id="Id">
+                    <h5>
+                        №
+                    </h5>
+                </th>
+                <th id="Name">
+                    <h5>
+                        Name
+                    </h5>
+                </th>
+
+                <th id="Year">
+                    <h5>
+                        Year
+                    </h5>
+                </th>
+                <th id="Detail">
+                    <h5>
+                        Details
+                    </h5>
+                </th>
+                <th id="Release">
+                    <h5>
+                        Release Date
+                    </h5>
+                </th>
+                <th>
+                    <h5>
+                        Delete
+                    </h5>
+                </th>
+                <th id="Genre">
+                    <h5>
+                        Genre
+                    </h5>
+                </th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $("#movies").DataTable({
+                "paging": false,
+                "ordering": true,
+                "info": false,
+                "searching": false,
+
+                ajax: {
+                    url: "/api/movies/",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "Id",
+                    },
+                    {
+                        data: "Name",
+                    },
+                    {
+                        data: "Year",
+
+                    },
+                    {
+                        data: "Detail",
+                    },
+                    {
+                        data: "ReleaseDate",
+
+                    },
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            return "<button class='btn btn-link js-delete' data-movies-id=" + data + ">Delete</button>";
+                        }
+                    },
+                    {
+                        data: "Genre.GenreType"
+
+                    }
+
+                ]
+            });
+
+            $("#movies").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure to want delete movies ?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/movies/" + button.attr("data-movies-Id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                                //button.parents("tr").remove();
+                            }
+                        })
+                    }
+                });
+            });
+        });
+    </script>
+}*@
+
+<div>
+        <table id="dataInfo" class=" table table-bordered ">
+            <thead>
+                <tr>
+                    <th >
+                        <h3>
+                            Company name
+                        </h3>
+                    </th>
+
+                    <th >
+                        <h3>
+                            Beta
+                        </h3>
+                    </th>
+                    <th >
+                        <h3>
+                            Week change
+                        </h3>
+                    </th>
+                    <th >
+                        <h3>
+                            Week Hight
+                        </h3>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+
+
+
+
+    @section scripts{
+        <script>
+            $(document).ready(function () {
+                var table = $("#dataInfo").DataTable({
+                    "paging": false,
+                    "ordering": true,
+                    "info": false,
+                    "searching": false,
+
+                    ajax: {
+                        url: "https://cloud.iexapis.com/stable/stock/aapl/stats/latestPrice?token=pk_ba9bb61a36a24ec3a5ae70362941f41c",
+                        contentType: "application/json",
+                        dataSrc: "",
+                        success: function (data) {
+                            console.log(data.companyName);
+                        },
+
+                        columns: [
+                            {
+                                data: "companyName :",
+                                render: function (data) {
+                                    return data.companyName;
+                                }
+                            },
+                            {
+                                data: "beta:",
+                                render: function (data) {
+                                    return data.beta;
+                                }
+                            },
+                            {
+                                data: "week52change",
+                                render: function (data) {
+                                    return data.week52change;
+                                }
+                            },
+                            {
+                                data: "week52high",
+                                render: function (data) {
+                                    return data.week52high;
+                                }
+                            },
+                        ]
+                        
+                    },
+                });
+            });
+        </script>
+
+    }
+
+
