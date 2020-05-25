@@ -1,0 +1,52 @@
+﻿@using VidlyAuth.Dto
+@model MoviesDto
+@{
+    
+}
+
+@Html.HiddenFor(m=>m.Id)
+
+<table id="movie" class="table table-hover">
+    <thead>
+        <tr>
+            <th id="Name"></th>
+            <th id="Genre"></th>
+            <th id="RealeseData"></th>
+            <th id="Detail"></th>
+        </tr>
+    </thead>
+</table>
+
+@{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre.GenreType)
+        @Html.TextBoxFor(m => m.Genre.GenreType, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReleaseDate)
+        @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Detail)
+        @Html.TextBoxFor(m => m.Detail, new { @class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        <img src="~/Image/protesting.gif" style="width:500px;height:500px" />
+    </div>
+}
+
+
+
+
+<h2>Detail</h2>
+

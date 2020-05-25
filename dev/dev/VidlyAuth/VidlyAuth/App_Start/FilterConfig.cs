@@ -8,6 +8,7 @@ namespace VidlyAuth
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //ilters.Add(new AuthorizeAttribute());
         }
     }
 }
