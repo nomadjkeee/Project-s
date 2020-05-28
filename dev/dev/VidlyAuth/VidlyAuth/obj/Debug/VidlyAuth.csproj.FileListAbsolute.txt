@@ -138,3 +138,4 @@ D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.dll
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.pdb
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.Migrations.SeedUsers.resources
 D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.csprojAssemblyReference.cache
+D:\GitProject\dev\dev\VidlyAuth\VidlyAuth\obj\Debug\VidlyAuth.Migrations.AddRentalTable.resources
