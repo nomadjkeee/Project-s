@@ -36,6 +36,7 @@ namespace VidlyAuth.Controllers.api
                 _dbContext.Rentals.Add(rental);
                 
             }
+            _dbContext.SaveChanges();
             return Ok();
         }
     }
