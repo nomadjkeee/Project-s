@@ -22,6 +22,16 @@ namespace VidlyAuth.App_Start
             Mapper.CreateMap<GenreDto, Genre>()
                 .ForMember(t => t.Id, opt => opt.Ignore());
 
+            Mapper.CreateMap<Customer, CustomerDto>();
+
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(t => t.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MemberShip, MemberShipDto>();
+
+            Mapper.CreateMap<MemberShipDto, MemberShip>()
+                .ForMember(t => t.Id, opt => opt.Ignore());
+
         }
     }
 }
