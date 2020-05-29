@@ -22,10 +22,17 @@ namespace VidlyAuth.Controllers.api
 
         //Get//Movies
         [HttpGet]
-        public  IHttpActionResult GetMovies()
+
+        public  IHttpActionResult GetMovies(string query = null)
         {
-            return  Ok(_dataBaseContext.Movies.Include("Genre").ToList().Select(Mapper.Map<Movies, MoviesDto>));
+            IQueryable<Movies> movies = _dataBaseContext.Movies.Include("Genre");
+
+            if (!String.IsNullOrWhiteSpace(query))
+                movies = movies.Where(t => t.Name.Contains(query));
+            
+            return  Ok(movies.ToList().Select(Mapper.Map<Movies, MoviesDto>));
         }
+
 
         //Get//Movies//1
         public IHttpActionResult GetMovies(int id)

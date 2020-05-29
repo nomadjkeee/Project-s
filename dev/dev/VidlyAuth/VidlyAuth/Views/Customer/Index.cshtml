@@ -1,0 +1,85 @@
+﻿@using VidlyAuth.ViewModels
+@model CustomerViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table id="customers" class="table table-hover">
+    <thead>
+        <tr>
+            <th id="Id">
+                <h5>Id</h5>
+            </th>
+            <th id="Name">
+                <h5>Name</h5>
+            </th>
+            <th id="Email">
+                <h5>Email</h5>
+            </th>
+            <th id="Date of birthday">
+                <h5>Data of Birthday</h5>
+            </th>
+            <th id="MemberShip">
+                <h5>
+                    MemberShip
+                </h5>
+            </th>
+        </tr>
+    </thead>
+</table>
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function () {
+
+            var table = $("#customers").DataTable({
+                "paging": false,
+                "ordering": true,
+                "info": false,
+                "searching": false,
+
+                ajax: {
+                    url: "/api/customer/",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "Id",
+                    },
+                    {
+                        data: "Name",
+                        render: function (data, type, customer) {
+                            return "<a href = '/Customer/Detail/'" + customer.Id + "'>" + customer.Name;
+                        }
+                    },
+                    {
+                        data: "Email",
+                    },
+                    {
+                        data: "Birthhday"
+                    },
+                    {
+                        data: "MemberShip.MemberShipType",
+
+                    }
+
+                ]
+
+            })
+        });
+        $(document).on("click", function () {
+
+        })
+
+
+   
+    </script>
+
+
+
+}
+

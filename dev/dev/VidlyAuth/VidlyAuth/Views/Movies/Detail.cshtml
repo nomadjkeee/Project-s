@@ -1,0 +1,76 @@
+﻿@using VidlyAuth.Dto
+@model MoviesDto
+@{
+}
+<h2>@Model.Name (@Model.ReleaseDate)</h2>
+
+@Html.HiddenFor(m => m.Id)
+
+<table class="table table">
+    <colgroup>
+        <col id="first"  />
+        <col id="second" />
+    </colgroup>
+    @Html.HiddenFor(m => m.Id)
+<tbody>
+    <tr class="form-group">
+        <td>
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @style = "width:100%" })
+        </td>
+        <td colspan="10" rowspan="10" >
+            <img src=@Url.Content($"~/Image/{Model.Id.ToString()}.jpg") style="width:500px;height:500px" />
+        </td>
+    </tr>
+
+    <tr class="form-group">
+        <td>
+            @Html.LabelFor(m => m.Genre.GenreType)
+            @Html.TextBoxFor(m => m.Genre.GenreType, new { @class = "form-control", @style = "width:100%" })
+        </td>
+    </tr>
+
+    <tr class="form-group">
+        <td>
+            @Html.LabelFor(m => m.ReleaseDate)
+            @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control", @style = "width:100%" })
+        </td>
+    </tr>
+
+    <tr class="form-group">
+        <td>
+            @Html.LabelFor(m => m.Detail)
+            @Html.TextAreaFor(m => m.Detail, new { @class = "form-control", @style = "width:100%;height:250px;readonly:true" })
+        </td>
+    </tr>
+
+    @*@{
+
+
+
+
+            <div class="form-group" style="width:50%">
+                @Html.LabelFor(m => m.Genre.GenreType)
+                @Html.TextBoxFor(m => m.Genre.GenreType, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group" style="width:50%">
+                @Html.LabelFor(m => m.ReleaseDate)
+                @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group" style="width:50%">
+                @Html.LabelFor(m => m.Detail)
+                @Html.TextAreaFor(m => m.Detail, new { @class = "form-control", @style = "width:500px" })
+            </div>
+            <div class="form-group" style="width:50%">
+                <img src=@Url.Content($"~/Image/{Model.Id.ToString()}.jpg") style="width:500px;height:500px" />
+            </div>
+        }*@
+</tbody>
+
+</table>
+
+
+
+

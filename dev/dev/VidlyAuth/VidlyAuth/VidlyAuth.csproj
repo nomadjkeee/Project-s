@@ -186,11 +186,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\CustomerController.cs" />
     <Compile Include="Controllers\api\MoviesController.cs" />
+    <Compile Include="Controllers\api\RentalController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalController.cs" />
+    <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\GenreDto.cs" />
+    <Compile Include="Dto\MemberShipDto.cs" />
+    <Compile Include="Dto\NewRentalDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,8 +209,13 @@
     <Compile Include="Migrations\202005031306171_SeedUsers.Designer.cs">
       <DependentUpon>202005031306171_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005281116438_AddRentalTable.cs" />
+    <Compile Include="Migrations\202005281116438_AddRentalTable.Designer.cs">
+      <DependentUpon>202005281116438_AddRentalTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FilmViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -213,9 +225,11 @@
     <Compile Include="Models\MemberShip.cs" />
     <Compile Include="Models\Movies.cs" />
     <Compile Include="Dto\MoviesDto.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -331,16 +345,33 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\1.jpg" />
+    <Content Include="Image\2.jpg" />
+    <Content Include="Image\3.jpg" />
+    <Content Include="Image\4.jpg" />
+    <Content Include="Image\5.jpg" />
+    <Content Include="Image\6.jpg" />
+    <Content Include="Image\7.jpg" />
+    <Content Include="Image\8.jpg" />
+    <Content Include="Image\9.jpg" />
+    <Content Include="Image\protesting.gif" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -416,6 +447,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -451,6 +488,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Detail.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Rental\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -475,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005031306171_SeedUsers.resx">
       <DependentUpon>202005031306171_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281116438_AddRentalTable.resx">
+      <DependentUpon>202005281116438_AddRentalTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
